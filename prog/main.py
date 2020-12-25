@@ -164,21 +164,20 @@ def my_mainloop():
         w3 = ""
         w4 = ""
         w5 = ""
-        slovo1.place(
         w1 = alist[0]
         w2 = alist[1]
         w3 = alist[2]
         w4 = ""
         w5 = ""
-        slovo1.place(x=10, y=40)
+        slovo1.delete('1.0', END)
         slovo1.insert(END, "" + str(w1))
-        slovo2.place(x=10, y=70)
+        slovo2.delete('1.0', END)
         slovo2.insert(END, "" + str(w2))
-        slovo3.place(x=10, y=100)
+        slovo3.delete('1.0', END)
         slovo3.insert(END, "" + str(w3))
-        slovo4.place(x=10, y=130)
+        slovo4.delete('1.0', END)
         slovo4.insert(END, "" + str(w4))
-        slovo5.place(x=10, y=160)
+        slovo5.delete('1.0', END)
         slovo5.insert(END, "" + str(w5))
     elif len(alist)==2:
         w1 = ""
