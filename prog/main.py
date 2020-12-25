@@ -302,6 +302,12 @@ def t9():
         if key == "space":
             word = ""
             tlist.clear()
+        if key == "backspace":
+            srez = len(word)
+            srez = srez-1
+            word = word[:srez]
+            tlist.clear()
+            time.sleep(0.1)
 
 #start process
 t1 = threading.Thread(target=t9, args=())
