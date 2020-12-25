@@ -1,0 +1,17 @@
+width = 950
+height = 570
+bg = "#191919"
+button = "#412227"
+butbg = "#412227"
+title = "T9 helper"
+imgpath = "proj/prog/image.png"
+butpath = "proj/prog/butimg.png"
+font = ""
+text="Arial 20 bold"
+dictionarypath="proj/prog/slov.txt"
+green="#00FF00"
+yellow ="#FFFF00"
+blue ="#0000FF"
+red ="#FF2400"
+default = "#412227"
+name = "Arial 50 bold"
