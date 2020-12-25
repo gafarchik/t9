@@ -138,6 +138,11 @@ def my_mainloop():
     if 1>100:
         print(2)
     elif len(alist)==4:
+        w1 = ""
+        w2 = ""
+        w3 = ""
+        w4 = ""
+        w5 = ""
         w1 = alist[0]
         w2 = alist[1]
         w3 = alist[2]
@@ -154,6 +159,12 @@ def my_mainloop():
         slovo5.delete('1.0', END)
         slovo5.insert(END, "" + str(w5))
     elif len(alist)==3:
+        w1 = ""
+        w2 = ""
+        w3 = ""
+        w4 = ""
+        w5 = ""
+        slovo1.place(
         w1 = alist[0]
         w2 = alist[1]
         w3 = alist[2]
@@ -170,6 +181,11 @@ def my_mainloop():
         slovo5.place(x=10, y=160)
         slovo5.insert(END, "" + str(w5))
     elif len(alist)==2:
+        w1 = ""
+        w2 = ""
+        w3 = ""
+        w4 = ""
+        w5 = "" 
         w1 = alist[0]
         w2 = alist[1]
         w3 = ""
@@ -186,6 +202,11 @@ def my_mainloop():
         slovo5.delete('1.0', END)
         slovo5.insert(END, "" + str(w5))
     elif len(alist)==1:
+        w1 = ""
+        w2 = ""
+        w3 = ""
+        w4 = ""
+        w5 = ""
         w1 = alist[0]
         w2 = ""
         w3 = ""
@@ -205,6 +226,11 @@ def my_mainloop():
         slovo5.delete('1.0', END)
         slovo5.insert(END, "" + str(w5))
     elif len(alist)>5:
+        w1 = ""
+        w2 = ""
+        w3 = ""
+        w4 = ""
+        w5 = ""
         w1 = alist[0]
         w2 = alist[1]
         w3 = alist[2]
