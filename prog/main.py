@@ -25,7 +25,11 @@ root.config(bg=config.bg)
 root.title(config.title)
 root.resizable(height=0,width=0)
 
-
+btn_text1 = tk.StringVar()
+btn_text2 = tk.StringVar()
+btn_text3 = tk.StringVar()
+btn_text4 = tk.StringVar()
+btn_text5 = tk.StringVar()
 #commands
 def play():
     startbutton.place(x=130, y=10, height=40, width=40)
@@ -110,8 +114,26 @@ def start():
     getbutton.pack_forget()
     name.place(x=420, y=5)
     root.wm_attributes('-topmost', 1)
-
-
+def tw1():
+    global word
+    global w1
+    word = w1
+def tw2():
+    global word
+    global w2
+    word = w2
+def tw3():
+    global word
+    global w3
+    word = w3
+def tw4():
+    global word
+    global w4
+    word = w4
+def tw5():
+    global word
+    global w5
+    word = w5
 #hud
 loadimage = PhotoImage(file=config.imgpath)
 loadimage = loadimage.subsample(16)
@@ -138,23 +160,17 @@ text.pack_forget()
 getbutton = tk.Button(root,bg=config.butbg,command=setdictionary,text="установить",fg=config.bg,font = config.text)
 getbutton.pack()
 getbutton.pack_forget()
-slovo1 = tk.Text(root, height=2, font=config.text, fg=config.butbg, bg=config.bg,highlightbackground=config.butbg,highlightthickness=4)
-slovo1["border"] = "0"
+slovo1 = tk.Button(root, textvariable = btn_text1,command=tw1, font=config.text, fg=config.butbg, bg=config.bg,highlightbackground=config.butbg,highlightthickness=4)
 slovo1.pack_forget()
-slovo2 = tk.Text(root, height=2, font=config.text, fg=config.butbg, bg=config.bg,highlightbackground=config.butbg,highlightthickness=4)
-slovo2["border"] = "0"
+slovo2 = tk.Button(root,  font=config.text, textvariable = btn_text2,command=tw2, fg=config.butbg, bg=config.bg,highlightbackground=config.butbg,highlightthickness=4)
 slovo2.pack_forget()
-slovo3 = tk.Text(root, height=2, font=config.text, fg=config.butbg, bg=config.bg,highlightbackground=config.butbg,highlightthickness=4)
-slovo3["border"] = "0"
+slovo3 = tk.Button(root,  font=config.text, textvariable = btn_text3,command=tw3, fg=config.butbg, bg=config.bg,highlightbackground=config.butbg,highlightthickness=4)
 slovo3.pack_forget()
-slovo4 = tk.Text(root, height=2, font=config.text, fg=config.butbg, bg=config.bg,highlightbackground=config.butbg,highlightthickness=4)
-slovo4["border"] = "0"
+slovo4 = tk.Button(root,  font=config.text, fg=config.butbg, textvariable = btn_text4,command=tw4, bg=config.bg,highlightbackground=config.butbg,highlightthickness=4)
 slovo4.pack_forget()
-slovo5 = tk.Text(root, height=2, font=config.text, fg=config.butbg, bg=config.bg,highlightbackground=config.butbg,highlightthickness=4)
-slovo5.insert(END,"")
-slovo5["border"] = "0"
+slovo5 = tk.Button(root, font=config.text, fg=config.butbg, textvariable = btn_text5,command=tw5,bg=config.bg,highlightbackground=config.butbg,highlightthickness=4)
 slovo5.pack_forget()
-yourslovo = tk.Text(root, height=2, font=config.text, fg=config.butbg, bg=config.bg,highlightbackground=config.butbg,highlightthickness=4)
+yourslovo = tk.Text(root,height=2, font=config.text, fg=config.butbg, bg=config.bg,highlightbackground=config.butbg,highlightthickness=4)
 yourslovo.insert(END,"")
 yourslovo["border"] = "0"
 yourslovo.pack_forget()
@@ -176,6 +192,11 @@ def my_mainloop():
     global w4
     global w5
     global word
+    global btn_text1
+    global btn_text2
+    global btn_text3
+    global btn_text4
+    global btn_text5
     if 1>100:
         print(2)
     elif len(alist)==4:
@@ -189,16 +210,12 @@ def my_mainloop():
         w3 = alist[2]
         w4 = alist[3]
         w5 = ""
-        slovo1.delete('1.0', END)
-        slovo1.insert(END, "" + str(w1))
-        slovo2.delete('1.0', END)
-        slovo2.insert(END, "" + str(w2))
-        slovo3.delete('1.0', END)
-        slovo3.insert(END, "" + str(w3))
-        slovo4.delete('1.0', END)
-        slovo4.insert(END, "" + str(w4))
-        slovo5.delete('1.0', END)
-        slovo5.insert(END, "" + str(w5))
+        root.update()
+        btn_text1.set(w1)
+        btn_text2.set(w2)
+        btn_text3.set(w3)
+        btn_text4.set(w4)
+        btn_text5.set(w5)
         yourslovo.delete('1.0',END)
         yourslovo.insert(END,""+str(word))
     elif len(alist)==3:
@@ -212,16 +229,11 @@ def my_mainloop():
         w3 = alist[2]
         w4 = ""
         w5 = ""
-        slovo1.delete('1.0', END)
-        slovo1.insert(END, "" + str(w1))
-        slovo2.delete('1.0', END)
-        slovo2.insert(END, "" + str(w2))
-        slovo3.delete('1.0', END)
-        slovo3.insert(END, "" + str(w3))
-        slovo4.delete('1.0', END)
-        slovo4.insert(END, "" + str(w4))
-        slovo5.delete('1.0', END)
-        slovo5.insert(END, "" + str(w5))
+        btn_text1.set(w1)
+        btn_text2.set(w2)
+        btn_text3.set(w3)
+        btn_text4.set(w4)
+        btn_text5.set(w5)
         yourslovo.delete('1.0', END)
         yourslovo.insert(END, "" + str(word))
     elif len(alist)==2:
@@ -235,16 +247,11 @@ def my_mainloop():
         w3 = ""
         w4 = ""
         w5 = ""
-        slovo1.delete('1.0', END)
-        slovo1.insert(END, "" + str(w1))
-        slovo2.delete('1.0', END)
-        slovo2.insert(END, "" + str(w2))
-        slovo3.delete('1.0', END)
-        slovo3.insert(END, "" + str(w3))
-        slovo4.delete('1.0', END)
-        slovo4.insert(END, "" + str(w4))
-        slovo5.delete('1.0', END)
-        slovo5.insert(END, "" + str(w5))
+        btn_text1.set(w1)
+        btn_text2.set(w2)
+        btn_text3.set(w3)
+        btn_text4.set(w4)
+        btn_text5.set(w5)
         yourslovo.delete('1.0', END)
         yourslovo.insert(END, "" + str(word))
     elif len(alist)==1:
@@ -258,19 +265,11 @@ def my_mainloop():
         w3 = ""
         w4 = ""
         w5 = ""
-        slovo1.delete('1.0', END)
-        slovo1.insert(END, "" + str(w1))
-        slovo2.delete('1.0', END)
-        slovo2.insert(END, "" + str(w2))
-
-        slovo3.delete('1.0', END)
-        slovo3.insert(END, "" + str(w3))
-
-        slovo4.delete('1.0', END)
-        slovo4.insert(END, "" + str(w4))
-
-        slovo5.delete('1.0', END)
-        slovo5.insert(END, "" + str(w5))
+        btn_text1.set(w1)
+        btn_text2.set(w2)
+        btn_text3.set(w3)
+        btn_text4.set(w4)
+        btn_text5.set(w5)
         yourslovo.delete('1.0', END)
         yourslovo.insert(END, "" + str(word))
     elif len(alist)>5:
@@ -284,19 +283,11 @@ def my_mainloop():
         w3 = alist[2]
         w4 = alist[3]
         w5 = alist[4]
-        slovo1.delete('1.0', END)
-        slovo1.insert(END, "" + str(w1))
-        slovo2.delete('1.0', END)
-        slovo2.insert(END, "" + str(w2))
-
-        slovo3.delete('1.0', END)
-        slovo3.insert(END, "" + str(w3))
-
-        slovo4.delete('1.0', END)
-        slovo4.insert(END, "" + str(w4))
-
-        slovo5.delete('1.0', END)
-        slovo5.insert(END, "" + str(w5))
+        btn_text1.set(w1)
+        btn_text2.set(w2)
+        btn_text3.set(w3)
+        btn_text4.set(w4)
+        btn_text5.set(w5)
         yourslovo.delete('1.0', END)
         yourslovo.insert(END, "" + str(word))
     yourslovo.delete('1.0', END)
