@@ -1,8 +1,8 @@
 width = 950
 height = 570
-bg = "#191919"
+bg = "#fff"
 button = "#412227"
-butbg = "#412227"
+butbg = "#1100ff"
 title = "T9 helper"
 imgpath = "proj/prog/image.png"
 butpath = "proj/prog/butimg.png"
