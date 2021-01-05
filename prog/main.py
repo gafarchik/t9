@@ -132,6 +132,12 @@ def play():
     xtext.pack_forget()
     sizeconfirm.pack()
     sizeconfirm.pack_forget()
+    butru.pack()
+    buten.pack()
+    butru.pack_forget()
+    buten.pack_forget()
+    ltext.pack()
+    ltext.pack_forget()
 def setting():
     butrtgreen.place(x=config.width/100*49.4736842105, y=config.height/100*41.6666666667, height=config.height/100*3.33333333333, width=config.width/100*2.10526315789)
     butrtblue.place(x=config.width/100*51.5789473684, y=config.height/100*41.6666666667, height=config.height/100*3.33333333333, width=config.width/100*2.10526315789)
@@ -159,6 +165,9 @@ def setting():
     inp.place(x = config.width/100*6.31578947368,y=config.height/100*20,height=40)
     text.place(x=config.width/100*6.31578947368,y=config.height/100*14)
     getbutton.place(x=config.width/100*73.6842105263,y=config.height/100*20,height=41)
+    ltext.place(y=config.height/100*33.3333333333,x=config.width/100*82.2105263158)
+    butru.place(y=config.height/100*41.6666666667,x=config.width/100*78.9473684211,width=65,height=47)
+    buten.place(y=config.height/100*41.6666666667, x=config.width/100*86.3157894737, width=65, height=47)
     name.pack()
     name.pack_forget()
     sname.place(x=config.width/100*31.5789473684,y=config.height/100*0.16666666666)
@@ -188,6 +197,12 @@ def close():
     keyboard.release("space")
     print("Press Any Key To Exit...")
 def start():
+    ltext.pack()
+    ltext.pack_forget()
+    butru.pack()
+    buten.pack()
+    butru.pack_forget()
+    buten.pack_forget()
     sizeconfirm.pack()
     sizeconfirm.pack_forget()
     xtext.pack()
@@ -278,7 +293,7 @@ def start():
     getbutton.pack(pady=1, padx=1)
     getbutton.pack_forget()
     name.place(x=config.width/100*44.2105263158, y=config.height/100*0.83333333333)
-    root.wm_attributes('-topmost', 1)
+    #root.wm_attributes('-topmost', 1)
 def tw1():
     global word
     global w1
@@ -417,6 +432,7 @@ def chcolor():
         inpwidth.config(fg=config.green)
         inphight.config(fg=config.green)
         sizeconfirm.config(fg=config.green)
+        ltext.config(fg=config.green)
     if color == 2:#yellow
         xtext.config(fg=config.yellow)
         sizetext.config(fg=config.yellow)
@@ -446,6 +462,7 @@ def chcolor():
         inpwidth.config(fg=config.yellow)
         inphight.config(fg=config.yellow)
         sizeconfirm.config(fg=config.yellow)
+        ltext.config(fg=config.yellow)
     if color == 3:#blue
         xtext.config(fg=config.blue)
         sizetext.config(fg=config.blue)
@@ -475,6 +492,7 @@ def chcolor():
         inpwidth.config(fg=config.blue)
         inphight.config(fg=config.blue)
         sizeconfirm.config(fg=config.blue)
+        ltext.config(fg=config.blue)
     if color == 4:
         xtext.config(fg=config.red)
         sizetext.config(fg=config.red)
@@ -504,6 +522,7 @@ def chcolor():
         inpwidth.config(fg=config.red)
         inphight.config(fg=config.red)
         sizeconfirm.config(fg=config.red)
+        ltext.config(fg=config.red)
     if color == 5:
         xtext.config(fg=config.default)
         sizetext.config(fg=config.default)
@@ -533,6 +552,7 @@ def chcolor():
         inpwidth.config(fg=config.default)
         inphight.config(fg=config.default)
         sizeconfirm.config(fg=config.default)
+        ltext.config(fg=config.default)
     if color == 6:
         sizetext.config(fg=config.white)
         qt.config(fg=config.white)
@@ -554,6 +574,7 @@ def chcolor():
         inpwidth.config(fg=config.white)
         inphight.config(fg=config.white)
         sizeconfirm.config(fg=config.white)
+        ltext.config(fg=config.white)
         if bgcolor==6:
             xtext.config(fg=config.white)
             yourslovo.config(fg=config.blue)
@@ -608,6 +629,7 @@ def chcolor():
         inpwidth.config(fg=config.black)
         inphight.config(fg=config.black)
         sizeconfirm.config(fg=config.black)
+        ltext.config(fg=config.black)
 def backcolor():
     global bgcolor
     if bgcolor == 1:#green
@@ -757,6 +779,7 @@ def rootcolors():
         ctext.config(bg=config.green)
         bgtext.config(bg=config.green)
         rttext.config(bg=config.green)
+        ltext.config(bg=config.green)
     if rootcolor == 2:
         xtext.config(bg=config.yellow)
         name.config(bg=config.yellow)
@@ -769,6 +792,7 @@ def rootcolors():
         ctext.config(bg=config.yellow)
         bgtext.config(bg=config.yellow)
         rttext.config(bg=config.yellow)
+        ltext.config(bg=config.yellow)
     if rootcolor == 3:
         xtext.config(bg=config.blue)
         name.config(bg=config.blue)
@@ -781,6 +805,7 @@ def rootcolors():
         ctext.config(bg=config.blue)
         bgtext.config(bg=config.blue)
         rttext.config(bg=config.blue)
+        ltext.config(bg=config.blue)
     if rootcolor == 4:
         xtext.config(bg=config.red)
         name.config(bg=config.red)
@@ -793,6 +818,7 @@ def rootcolors():
         ctext.config(bg=config.red)
         bgtext.config(bg=config.red)
         rttext.config(bg=config.red)
+        ltext.config(bg=config.red)
     if rootcolor == 5:
         xtext.config(bg=config.default)
         name.config(bg=config.default)
@@ -805,6 +831,7 @@ def rootcolors():
         ctext.config(bg=config.default)
         bgtext.config(bg=config.default)
         rttext.config(bg=config.default)
+        ltext.config(bg=config.default)
     if rootcolor == 6:
         xtext.config(bg=config.white)
         name.config(bg=config.white)
@@ -817,6 +844,7 @@ def rootcolors():
         sizetext.config(bg=config.white)
         rttext.config(bg=config.white)
         bgtext.config(bg=config.white)
+        ltext.config(bg=config.white)
     if rootcolor == 7:
         bgtext.config(bg=config.gray)
         rttext.config(bg=config.gray)
@@ -829,6 +857,7 @@ def rootcolors():
         name.config(bg=config.gray)
         sname.config(bg=config.gray)
         root.config(bg=config.gray)
+        ltext.config(bg=config.gray)
 def sizeconfirm():
     global maxwidth
     global maxheight
@@ -848,14 +877,42 @@ def ru():
     language()
 def en():
     global lang
-    lank = 1
+    lang = 1
     language()
 def language():
     global lang
     if lang == 0:
-        pass
+        sname.config(text="Настройки")
+        sizetext.config(text="Размер окна")
+        text.config(text="Задать путь к словарю")
+        tyour.config(text="Ваше слово")
+        tpod.config(text="Подсказки")
+        ctext.config(text="Цвет текста")
+        bgtext.config(text="Цвет фона")
+        rttext.config(text="Цвет окна")
+        ltext.config(text="Язык")
+        cconfirm.config(text="Установить")
+        cbgconfirm.config(text="Установить")
+        crtconfirm.config(text="Установить")
+        sizeconfirm.config(text="Установить")
+        getbutton.config(text="Установить")
     if lang == 1:
-        pass
+        bgtext.place(x=config.width/100*23.3157894737,y=config.height/100*33.3333333333)
+        rttext.place(x=config.width/100*49.4210526316, y=config.height/100*33.3333333333)
+        sname.config(text="Settings")
+        sizetext.config(text="Window size")
+        text.config(text="Set path to dictionary")
+        tyour.config(text="Your word")
+        tpod.config(text="Hints")
+        ctext.config(text="Text color")
+        bgtext.config(text="Background color")
+        rttext.config(text="Window color")
+        ltext.config(text="Language")
+        cconfirm.config(text="Set")
+        cbgconfirm.config(text="Set")
+        crtconfirm.config(text="Set")
+        sizeconfirm.config(text="Set")
+        getbutton.config(text="Set")
 #hud
 loadimage = PhotoImage(file=config.imgpath)
 loadimage = loadimage.subsample(16)
@@ -975,8 +1032,13 @@ sizeconfirm.pack_forget()
 ruimg = PhotoImage(file=config.rupath)
 ruimg = ruimg.subsample(16)
 enimg = PhotoImage(file=config.enpath)
-enimg = ruimg.subsample(16)
-butru = tk.Button(root,font=config.text,fg=config.butbg,bg=config.butbg)
+enimg = enimg.subsample(16)
+butru = tk.Button(root, image=ruimg,bg=config.butbg,command=ru,highlightbackground=config.butbg)
+butru.pack_forget()
+buten = tk.Button(root, image=enimg,bg=config.butbg,command=en,highlightbackground=config.butbg)
+buten.pack_forget()
+ltext = tk.Label(root, height=1, font=config.text, fg=config.butbg, bg=config.white, text="Язык")
+ltext.pack_forget()
 #t9
 def my_mainloop():
     global w1
