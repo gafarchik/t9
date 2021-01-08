@@ -138,7 +138,25 @@ def play():
     buten.pack_forget()
     ltext.pack()
     ltext.pack_forget()
+    activ.pack()
+    activ.pack_forget()
+    dactiv.pack()
+    dactiv.pack_forget()
+    minitext.pack()
+    minitext.pack_forget()
+    miniconfirm.pack()
+    miniconfirm.pack_forget()
+    inpclose.pack()
+    inpopen.pack()
+    inpclose.pack_forget()
+    inpopen.pack_forget()
 def setting():
+    inpopen.place(x=config.width/100*38.9473684211,y=config.height/100*76.6666666667,width=100)
+    inpclose.place(x=config.width/100*38.9473684211,y=config.height/100*91.6666666667,width=100)
+    miniconfirm.place(x=config.width/100*80,y=config.height/100*86.6666666667)
+    minitext.place(x=config.width/100*36.8421052632,y=config.height/100*58.3333333333)
+    activ.place(x=config.width/100*35.7894736842,y=config.height/100*63.6666666667)
+    dactiv.place(x=config.width/100*44.2105263158,y=config.height/100*63.6666666667)
     butrtgreen.place(x=config.width/100*49.4736842105, y=config.height/100*41.6666666667, height=config.height/100*3.33333333333, width=config.width/100*2.10526315789)
     butrtblue.place(x=config.width/100*51.5789473684, y=config.height/100*41.6666666667, height=config.height/100*3.33333333333, width=config.width/100*2.10526315789)
     butrtred.place(x=config.width/100*53.6842105263, y=config.height/100*41.6666666667, height=config.height/100*3.33333333333, width=config.width/100*2.10526315789)
@@ -197,6 +215,16 @@ def close():
     keyboard.release("space")
     print("Press Any Key To Exit...")
 def start():
+    inpclose.pack()
+    inpopen.pack()
+    inpclose.pack_forget()
+    inpopen.pack_forget()
+    miniconfirm.pack()
+    miniconfirm.pack_forget()
+    minitext.pack()
+    minitext.pack_forget()
+    dactiv.pack()
+    dactiv.pack_forget()
     ltext.pack()
     ltext.pack_forget()
     butru.pack()
@@ -257,6 +285,8 @@ def start():
     butwhite.pack()
     butdefault.pack()
     cconfirm.pack()
+    activ.pack()
+    activ.pack_forget()
     ctext.pack()
     ctext.pack_forget()
     butgreen.pack_forget()
@@ -404,6 +434,8 @@ def chcolor():
     global color
     global rootcolor
     if color == 1:#green
+        inpclose.config(fg=config.green)
+        inpopen.config(fg=config.green)
         xtext.config(fg=config.green)
         sizetext.config(fg=config.green)
         name.config(fg=config.green)
@@ -433,7 +465,13 @@ def chcolor():
         inphight.config(fg=config.green)
         sizeconfirm.config(fg=config.green)
         ltext.config(fg=config.green)
+        activ.config(fg=config.green)
+        dactiv.config(fg=config.green)
+        minitext.config(fg=config.green)
+        miniconfirm.config(fg=config.green)
     if color == 2:#yellow
+        inpclose.config(fg=config.yellow)
+        inpopen.config(fg=config.yellow)
         xtext.config(fg=config.yellow)
         sizetext.config(fg=config.yellow)
         name.config(fg=config.yellow)
@@ -463,7 +501,13 @@ def chcolor():
         inphight.config(fg=config.yellow)
         sizeconfirm.config(fg=config.yellow)
         ltext.config(fg=config.yellow)
+        activ.config(fg=config.yellow)
+        dactiv.config(fg=config.yellow)
+        minitext.config(fg=config.yellow)
+        miniconfirm.config(fg=config.yellow)
     if color == 3:#blue
+        inpclose.config(fg=config.blue)
+        inpopen.config(fg=config.blue)
         xtext.config(fg=config.blue)
         sizetext.config(fg=config.blue)
         name.config(fg=config.blue)
@@ -493,7 +537,13 @@ def chcolor():
         inphight.config(fg=config.blue)
         sizeconfirm.config(fg=config.blue)
         ltext.config(fg=config.blue)
+        activ.config(fg=config.blue)
+        dactiv.config(fg=config.blue)
+        minitext.config(fg=config.blue)
+        miniconfirm.config(fg=config.blue)
     if color == 4:
+        inpclose.config(fg=config.red)
+        inpopen.config(fg=config.red)
         xtext.config(fg=config.red)
         sizetext.config(fg=config.red)
         name.config(fg=config.red)
@@ -523,7 +573,13 @@ def chcolor():
         inphight.config(fg=config.red)
         sizeconfirm.config(fg=config.red)
         ltext.config(fg=config.red)
+        activ.config(fg=config.red)
+        dactiv.config(fg=config.red)
+        minitext.config(fg=config.red)
+        miniconfirm.config(fg=config.red)
     if color == 5:
+        inpclose.config(fg=config.default)
+        inpopen.config(fg=config.default)
         xtext.config(fg=config.default)
         sizetext.config(fg=config.default)
         name.config(fg=config.default)
@@ -553,7 +609,13 @@ def chcolor():
         inphight.config(fg=config.default)
         sizeconfirm.config(fg=config.default)
         ltext.config(fg=config.default)
+        activ.config(fg=config.default)
+        dactiv.config(fg=config.default)
+        minitext.config(fg=config.default)
+        miniconfirm.config(fg=config.default)
     if color == 6:
+        inpclose.config(fg=config.white)
+        inpopen.config(fg=config.white)
         sizetext.config(fg=config.white)
         qt.config(fg=config.white)
         playbut.config(fg=config.white)
@@ -575,6 +637,10 @@ def chcolor():
         inphight.config(fg=config.white)
         sizeconfirm.config(fg=config.white)
         ltext.config(fg=config.white)
+        activ.config(fg=config.white)
+        dactiv.config(fg=config.white)
+        minitext.config(fg=config.white)
+        miniconfirm.config(fg=config.white)
         if bgcolor==6:
             xtext.config(fg=config.white)
             yourslovo.config(fg=config.blue)
@@ -601,6 +667,8 @@ def chcolor():
             name.config(fg=config.blue)
             sname.config(fg=config.blue)
     if color == 7:
+        inpclose.config(fg=config.black)
+        inpopen.config(fg=config.black)
         xtext.config(fg=config.black)
         sizetext.config(fg=config.black)
         name.config(fg=config.black)
@@ -630,9 +698,15 @@ def chcolor():
         inphight.config(fg=config.black)
         sizeconfirm.config(fg=config.black)
         ltext.config(fg=config.black)
+        activ.config(fg=config.black)
+        dactiv.config(fg=config.black)
+        minitext.config(fg=config.black)
+        miniconfirm.config(fg=config.black)
 def backcolor():
     global bgcolor
     if bgcolor == 1:#green
+        inpclose.config(bg=config.green)
+        inpopen.config(bg=config.green)
         yourslovo.config(bg=config.green)
         playbut.config(bg=config.green)
         slovo5.config(bg=config.green)
@@ -651,7 +725,10 @@ def backcolor():
         inphight.config(bg=config.green)
         sizeconfirm.config(bg=config.green)
         roundedbutton.config(bg=config.green)
+        miniconfirm.config(bg=config.green)
     if bgcolor == 2:#yellow
+        inpclose.config(bg=config.yellow)
+        inpopen.config(bg=config.yellow)
         yourslovo.config(bg=config.yellow)
         playbut.config(bg=config.yellow)
         slovo5.config(bg=config.yellow)
@@ -670,7 +747,10 @@ def backcolor():
         inphight.config(bg=config.yellow)
         sizeconfirm.config(bg=config.yellow)
         roundedbutton.config(bg=config.yellow)
+        miniconfirm.config(bg=config.yellow)
     if bgcolor == 3:#blue
+        inpclose.config(bg=config.blue)
+        inpopen.config(bg=config.blue)
         yourslovo.config(bg=config.blue)
         playbut.config(bg=config.blue)
         slovo5.config(bg=config.blue)
@@ -689,7 +769,10 @@ def backcolor():
         inphight.config(bg=config.blue)
         sizeconfirm.config(bg=config.blue)
         roundedbutton.config(bg=config.blue)
+        miniconfirm.config(bg=config.blue)
     if bgcolor == 4:
+        inpclose.config(bg=config.red)
+        inpopen.config(bg=config.red)
         yourslovo.config(bg=config.red)
         playbut.config(bg=config.red)
         slovo5.config(bg=config.red)
@@ -708,7 +791,10 @@ def backcolor():
         inphight.config(bg=config.red)
         sizeconfirm.config(bg=config.red)
         roundedbutton.config(bg=config.red)
+        miniconfirm.config(bg=config.red)
     if bgcolor == 5:
+        inpclose.config(bg=config.default)
+        inpopen.config(bg=config.default)
         yourslovo.config(bg=config.default)
         playbut.config(bg=config.default)
         slovo5.config(bg=config.default)
@@ -727,7 +813,10 @@ def backcolor():
         inphight.config(bg=config.default)
         sizeconfirm.config(bg=config.default)
         roundedbutton.config(bg=config.default)
+        miniconfirm.config(bg=config.default)
     if bgcolor == 6:
+        inpclose.config(bg=config.white)
+        inpopen.config(bg=config.white)
         yourslovo.config(bg=config.white)
         playbut.config(bg=config.white)
         slovo5.config(bg=config.white)
@@ -746,7 +835,10 @@ def backcolor():
         inphight.config(bg=config.white)
         sizeconfirm.config(bg=config.white)
         roundedbutton.config(bg=config.white)
+        miniconfirm.config(bg=config.white)
     if bgcolor == 7:
+        inpclose.config(bg=config.black)
+        inpopen.config(bg=config.black)
         yourslovo.config(bg=config.black)
         playbut.config(bg=config.black)
         slovo5.config(bg=config.black)
@@ -765,6 +857,7 @@ def backcolor():
         inphight.config(bg=config.black)
         sizeconfirm.config(bg=config.black)
         roundedbutton.config(bg=config.black)
+        miniconfirm.config(bg=config.black)
 def rootcolors():
     global rootcolor
     if rootcolor == 1:
@@ -780,6 +873,9 @@ def rootcolors():
         bgtext.config(bg=config.green)
         rttext.config(bg=config.green)
         ltext.config(bg=config.green)
+        activ.config(bg=config.green)
+        dactiv.config(bg=config.green)
+        minitext.config(bg=config.green)
     if rootcolor == 2:
         xtext.config(bg=config.yellow)
         name.config(bg=config.yellow)
@@ -793,6 +889,9 @@ def rootcolors():
         bgtext.config(bg=config.yellow)
         rttext.config(bg=config.yellow)
         ltext.config(bg=config.yellow)
+        activ.config(bg=config.yellow)
+        dactiv.config(bg=config.yellow)
+        minitext.config(bg=config.yellow)
     if rootcolor == 3:
         xtext.config(bg=config.blue)
         name.config(bg=config.blue)
@@ -806,6 +905,9 @@ def rootcolors():
         bgtext.config(bg=config.blue)
         rttext.config(bg=config.blue)
         ltext.config(bg=config.blue)
+        activ.config(bg=config.blue)
+        dactiv.config(bg=config.blue)
+        minitext.config(bg=config.blue)
     if rootcolor == 4:
         xtext.config(bg=config.red)
         name.config(bg=config.red)
@@ -819,6 +921,9 @@ def rootcolors():
         bgtext.config(bg=config.red)
         rttext.config(bg=config.red)
         ltext.config(bg=config.red)
+        activ.config(bg=config.red)
+        dactiv.config(bg=config.red)
+        minitext.config(bg=config.red)
     if rootcolor == 5:
         xtext.config(bg=config.default)
         name.config(bg=config.default)
@@ -832,6 +937,9 @@ def rootcolors():
         bgtext.config(bg=config.default)
         rttext.config(bg=config.default)
         ltext.config(bg=config.default)
+        activ.config(bg=config.default)
+        dactiv.config(bg=config.default)
+        minitext.config(bg=config.default)
     if rootcolor == 6:
         xtext.config(bg=config.white)
         name.config(bg=config.white)
@@ -845,6 +953,9 @@ def rootcolors():
         rttext.config(bg=config.white)
         bgtext.config(bg=config.white)
         ltext.config(bg=config.white)
+        activ.config(bg=config.white)
+        dactiv.config(bg=config.white)
+        minitext.config(bg=config.white)
     if rootcolor == 7:
         bgtext.config(bg=config.gray)
         rttext.config(bg=config.gray)
@@ -858,6 +969,9 @@ def rootcolors():
         sname.config(bg=config.gray)
         root.config(bg=config.gray)
         ltext.config(bg=config.gray)
+        activ.config(bg=config.gray)
+        dactiv.config(bg=config.gray)
+        minitext.config(bg=config.gray)
 def sizeconfirm():
     global maxwidth
     global maxheight
@@ -896,9 +1010,12 @@ def language():
         crtconfirm.config(text="Установить")
         sizeconfirm.config(text="Установить")
         getbutton.config(text="Установить")
+        miniconfirm.config(text="Установить")
+        minitext.config(text="Мини окно")
     if lang == 1:
         bgtext.place(x=config.width/100*23.3157894737,y=config.height/100*33.3333333333)
         rttext.place(x=config.width/100*49.4210526316, y=config.height/100*33.3333333333)
+        miniconfirm.config(text="Set")
         sname.config(text="Settings")
         sizetext.config(text="Window size")
         text.config(text="Set path to dictionary")
@@ -913,6 +1030,17 @@ def language():
         crtconfirm.config(text="Set")
         sizeconfirm.config(text="Set")
         getbutton.config(text="Set")
+        minitext.config(text="Mini Window")
+def new():
+    global activ_var
+    global key
+    global bindclose
+    global bindopen
+    var=activ_var.get()
+    if var == 0:
+        pass
+    if var == 1:
+        window = tk.Toplevel(root)
 #hud
 loadimage = PhotoImage(file=config.imgpath)
 loadimage = loadimage.subsample(16)
@@ -1039,6 +1167,23 @@ buten = tk.Button(root, image=enimg,bg=config.butbg,command=en,highlightbackgrou
 buten.pack_forget()
 ltext = tk.Label(root, height=1, font=config.text, fg=config.butbg, bg=config.white, text="Язык")
 ltext.pack_forget()
+activ_var = IntVar()
+activ_var.set(0)
+activ = tk.Radiobutton(bg=config.white,text="On",variable=activ_var, value=1,fg=config.blue,font=config.text)
+activ.pack_forget()
+dactiv = tk.Radiobutton(bg=config.white,text="Off",variable=activ_var, value=0,fg=config.blue,font=config.text)
+dactiv.pack_forget()
+minitext = tk.Label(root, height=1, font=config.text, fg=config.butbg, bg=config.white, text="Мини окно")
+minitext.pack_forget()
+miniconfirm = tk.Button(root,font=config.text,fg=config.bg,bg=config.butbg,command=new,text="Установить")
+miniconfirm.pack_forget()
+bindclose = StringVar()
+inpclose = Entry(width=14,font=config.font,textvariable=bindclose,highlightbackground=config.butbg,highlightthickness=4)
+inpclose.pack_forget()
+bindopen = StringVar()
+inpopen = Entry(width=14,font=config.font,textvariable=bindopen,highlightbackground=config.butbg,highlightthickness=4)
+inpopen.pack_forget()
+
 #t9
 def my_mainloop():
     global w1
