@@ -14,6 +14,8 @@ color = 0
 lang = 0
 bgcolor = 6
 rootcolor=6
+bclose = ""
+bopen = ""
 w1 = ""
 w2 = ""
 w3 = ""
@@ -150,7 +152,13 @@ def play():
     inpopen.pack()
     inpclose.pack_forget()
     inpopen.pack_forget()
+    miniclose.pack()
+    miniopen.pack()
+    miniclose.pack_forget()
+    miniopen.pack_forget()
 def setting():
+    miniclose.place(x=320,y=510)
+    miniopen.place(x=320,y=420)
     inpopen.place(x=config.width/100*38.9473684211,y=config.height/100*76.6666666667,width=100)
     inpclose.place(x=config.width/100*38.9473684211,y=config.height/100*91.6666666667,width=100)
     miniconfirm.place(x=config.width/100*80,y=config.height/100*86.6666666667)
@@ -215,6 +223,10 @@ def close():
     keyboard.release("space")
     print("Press Any Key To Exit...")
 def start():
+    miniclose.pack()
+    miniopen.pack()
+    miniclose.pack_forget()
+    miniopen.pack_forget()
     inpclose.pack()
     inpopen.pack()
     inpclose.pack_forget()
@@ -469,6 +481,8 @@ def chcolor():
         dactiv.config(fg=config.green)
         minitext.config(fg=config.green)
         miniconfirm.config(fg=config.green)
+        miniclose.config(fg=config.green)
+        miniopen.config(fg=config.green)
     if color == 2:#yellow
         inpclose.config(fg=config.yellow)
         inpopen.config(fg=config.yellow)
@@ -505,6 +519,8 @@ def chcolor():
         dactiv.config(fg=config.yellow)
         minitext.config(fg=config.yellow)
         miniconfirm.config(fg=config.yellow)
+        miniclose.config(fg=config.yellow)
+        miniopen.config(fg=config.yellow)
     if color == 3:#blue
         inpclose.config(fg=config.blue)
         inpopen.config(fg=config.blue)
@@ -541,6 +557,8 @@ def chcolor():
         dactiv.config(fg=config.blue)
         minitext.config(fg=config.blue)
         miniconfirm.config(fg=config.blue)
+        miniclose.config(fg=config.blue)
+        miniopen.config(fg=config.blue)
     if color == 4:
         inpclose.config(fg=config.red)
         inpopen.config(fg=config.red)
@@ -577,6 +595,8 @@ def chcolor():
         dactiv.config(fg=config.red)
         minitext.config(fg=config.red)
         miniconfirm.config(fg=config.red)
+        miniclose.config(fg=config.red)
+        miniopen.config(fg=config.red)
     if color == 5:
         inpclose.config(fg=config.default)
         inpopen.config(fg=config.default)
@@ -613,6 +633,8 @@ def chcolor():
         dactiv.config(fg=config.default)
         minitext.config(fg=config.default)
         miniconfirm.config(fg=config.default)
+        miniclose.config(fg=config.default)
+        miniopen.config(fg=config.default)
     if color == 6:
         inpclose.config(fg=config.white)
         inpopen.config(fg=config.white)
@@ -641,6 +663,8 @@ def chcolor():
         dactiv.config(fg=config.white)
         minitext.config(fg=config.white)
         miniconfirm.config(fg=config.white)
+        miniclose.config(fg=config.white)
+        miniopen.config(fg=config.white)
         if bgcolor==6:
             xtext.config(fg=config.white)
             yourslovo.config(fg=config.blue)
@@ -702,6 +726,8 @@ def chcolor():
         dactiv.config(fg=config.black)
         minitext.config(fg=config.black)
         miniconfirm.config(fg=config.black)
+        miniclose.config(fg=config.black)
+        miniopen.config(fg=config.black)
 def backcolor():
     global bgcolor
     if bgcolor == 1:#green
@@ -876,6 +902,8 @@ def rootcolors():
         activ.config(bg=config.green)
         dactiv.config(bg=config.green)
         minitext.config(bg=config.green)
+        miniclose.config(bg=config.green)
+        miniopen.config(bg=config.green)
     if rootcolor == 2:
         xtext.config(bg=config.yellow)
         name.config(bg=config.yellow)
@@ -892,6 +920,8 @@ def rootcolors():
         activ.config(bg=config.yellow)
         dactiv.config(bg=config.yellow)
         minitext.config(bg=config.yellow)
+        miniclose.config(bg=config.yellow)
+        miniopen.config(bg=config.yellow)
     if rootcolor == 3:
         xtext.config(bg=config.blue)
         name.config(bg=config.blue)
@@ -908,6 +938,8 @@ def rootcolors():
         activ.config(bg=config.blue)
         dactiv.config(bg=config.blue)
         minitext.config(bg=config.blue)
+        miniclose.config(bg=config.blue)
+        miniopen.config(bg=config.blue)
     if rootcolor == 4:
         xtext.config(bg=config.red)
         name.config(bg=config.red)
@@ -924,6 +956,8 @@ def rootcolors():
         activ.config(bg=config.red)
         dactiv.config(bg=config.red)
         minitext.config(bg=config.red)
+        miniclose.config(bg=config.red)
+        miniopen.config(bg=config.red)
     if rootcolor == 5:
         xtext.config(bg=config.default)
         name.config(bg=config.default)
@@ -940,6 +974,8 @@ def rootcolors():
         activ.config(bg=config.default)
         dactiv.config(bg=config.default)
         minitext.config(bg=config.default)
+        miniclose.config(bg=config.default)
+        miniopen.config(bg=config.default)
     if rootcolor == 6:
         xtext.config(bg=config.white)
         name.config(bg=config.white)
@@ -956,6 +992,8 @@ def rootcolors():
         activ.config(bg=config.white)
         dactiv.config(bg=config.white)
         minitext.config(bg=config.white)
+        miniclose.config(bg=config.white)
+        miniopen.config(bg=config.white)
     if rootcolor == 7:
         bgtext.config(bg=config.gray)
         rttext.config(bg=config.gray)
@@ -972,6 +1010,8 @@ def rootcolors():
         activ.config(bg=config.gray)
         dactiv.config(bg=config.gray)
         minitext.config(bg=config.gray)
+        miniclose.config(bg=config.gray)
+        miniopen.config(bg=config.gray)
 def sizeconfirm():
     global maxwidth
     global maxheight
@@ -1012,6 +1052,8 @@ def language():
         getbutton.config(text="Установить")
         miniconfirm.config(text="Установить")
         minitext.config(text="Мини окно")
+        miniopen.config(text="Кнопка открытия")
+        miniclose.config(text="Кнопка закрытия")
     if lang == 1:
         bgtext.place(x=config.width/100*23.3157894737,y=config.height/100*33.3333333333)
         rttext.place(x=config.width/100*49.4210526316, y=config.height/100*33.3333333333)
@@ -1031,6 +1073,8 @@ def language():
         sizeconfirm.config(text="Set")
         getbutton.config(text="Set")
         minitext.config(text="Mini Window")
+        miniclose.config(text="Close Button")
+        miniopen.config(text="Open Button")
 def new():
     global activ_var
     global key
@@ -1041,6 +1085,30 @@ def new():
         pass
     if var == 1:
         window = tk.Toplevel(root)
+def openbind(event):
+    global bopen
+    key2 = keyboard.read_key()
+    badkeys = ["q","w","e","r","t","y","u","i","o","p",
+               "a","s","d","f","g","h","j","k","l"
+               ,"z","x","c","v","b","n","m",
+               "enter","backspace","space"]
+    if key2:
+        if key2 not in badkeys:
+            bopen = key2
+            inpopen.delete(0,END)
+            inpopen.insert(END,bopen)
+def closebind(event):
+    global bclose
+    key2 = keyboard.read_key()
+    badkeys = ["q","w","e","r","t","y","u","i","o","p",
+               "a","s","d","f","g","h","j","k","l"
+               ,"z","x","c","v","b","n","m",
+               "enter","backspace","space"]
+    if key2:
+        if key2 not in badkeys:
+            bclose = key2
+            inpclose.delete(0,END)
+            inpclose.insert(END,bclose)
 #hud
 loadimage = PhotoImage(file=config.imgpath)
 loadimage = loadimage.subsample(16)
@@ -1183,7 +1251,12 @@ inpclose.pack_forget()
 bindopen = StringVar()
 inpopen = Entry(width=14,font=config.font,textvariable=bindopen,highlightbackground=config.butbg,highlightthickness=4)
 inpopen.pack_forget()
-
+miniopen = tk.Label(root, height=1, font=config.text, fg=config.butbg, bg=config.white, text="Кнопка Открытия")
+miniopen.pack_forget()
+miniclose = tk.Label(root, height=1, font=config.text, fg=config.butbg, bg=config.white, text="Кнопка Закрытия",)
+miniclose.pack_forget()
+inpopen.bind('<Button-1>',openbind)
+inpclose.bind('<Button-1>',closebind)
 #t9
 def my_mainloop():
     global w1
@@ -1197,6 +1270,8 @@ def my_mainloop():
     global btn_text3
     global btn_text4
     global btn_text5
+    global bindclose
+    global bindopen
     if 1==100:
         print(2)
     elif len(alist)==4:
