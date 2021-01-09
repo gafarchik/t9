@@ -12,6 +12,7 @@ import config
 config.font = "Arial 24 bold"
 color = 0
 lang = 0
+wind = 0
 bgcolor = 6
 rootcolor=6
 bclose = ""
@@ -146,8 +147,6 @@ def play():
     dactiv.pack_forget()
     minitext.pack()
     minitext.pack_forget()
-    miniconfirm.pack()
-    miniconfirm.pack_forget()
     inpclose.pack()
     inpopen.pack()
     inpclose.pack_forget()
@@ -161,7 +160,6 @@ def setting():
     miniopen.place(x=320,y=420)
     inpopen.place(x=config.width/100*38.9473684211,y=config.height/100*76.6666666667,width=100)
     inpclose.place(x=config.width/100*38.9473684211,y=config.height/100*91.6666666667,width=100)
-    miniconfirm.place(x=config.width/100*80,y=config.height/100*86.6666666667)
     minitext.place(x=config.width/100*36.8421052632,y=config.height/100*58.3333333333)
     activ.place(x=config.width/100*35.7894736842,y=config.height/100*63.6666666667)
     dactiv.place(x=config.width/100*44.2105263158,y=config.height/100*63.6666666667)
@@ -231,8 +229,6 @@ def start():
     inpopen.pack()
     inpclose.pack_forget()
     inpopen.pack_forget()
-    miniconfirm.pack()
-    miniconfirm.pack_forget()
     minitext.pack()
     minitext.pack_forget()
     dactiv.pack()
@@ -480,7 +476,6 @@ def chcolor():
         activ.config(fg=config.green)
         dactiv.config(fg=config.green)
         minitext.config(fg=config.green)
-        miniconfirm.config(fg=config.green)
         miniclose.config(fg=config.green)
         miniopen.config(fg=config.green)
     if color == 2:#yellow
@@ -518,7 +513,6 @@ def chcolor():
         activ.config(fg=config.yellow)
         dactiv.config(fg=config.yellow)
         minitext.config(fg=config.yellow)
-        miniconfirm.config(fg=config.yellow)
         miniclose.config(fg=config.yellow)
         miniopen.config(fg=config.yellow)
     if color == 3:#blue
@@ -556,7 +550,6 @@ def chcolor():
         activ.config(fg=config.blue)
         dactiv.config(fg=config.blue)
         minitext.config(fg=config.blue)
-        miniconfirm.config(fg=config.blue)
         miniclose.config(fg=config.blue)
         miniopen.config(fg=config.blue)
     if color == 4:
@@ -594,7 +587,6 @@ def chcolor():
         activ.config(fg=config.red)
         dactiv.config(fg=config.red)
         minitext.config(fg=config.red)
-        miniconfirm.config(fg=config.red)
         miniclose.config(fg=config.red)
         miniopen.config(fg=config.red)
     if color == 5:
@@ -632,7 +624,6 @@ def chcolor():
         activ.config(fg=config.default)
         dactiv.config(fg=config.default)
         minitext.config(fg=config.default)
-        miniconfirm.config(fg=config.default)
         miniclose.config(fg=config.default)
         miniopen.config(fg=config.default)
     if color == 6:
@@ -662,7 +653,6 @@ def chcolor():
         activ.config(fg=config.white)
         dactiv.config(fg=config.white)
         minitext.config(fg=config.white)
-        miniconfirm.config(fg=config.white)
         miniclose.config(fg=config.white)
         miniopen.config(fg=config.white)
         if bgcolor==6:
@@ -725,7 +715,6 @@ def chcolor():
         activ.config(fg=config.black)
         dactiv.config(fg=config.black)
         minitext.config(fg=config.black)
-        miniconfirm.config(fg=config.black)
         miniclose.config(fg=config.black)
         miniopen.config(fg=config.black)
 def backcolor():
@@ -751,7 +740,6 @@ def backcolor():
         inphight.config(bg=config.green)
         sizeconfirm.config(bg=config.green)
         roundedbutton.config(bg=config.green)
-        miniconfirm.config(bg=config.green)
     if bgcolor == 2:#yellow
         inpclose.config(bg=config.yellow)
         inpopen.config(bg=config.yellow)
@@ -773,7 +761,6 @@ def backcolor():
         inphight.config(bg=config.yellow)
         sizeconfirm.config(bg=config.yellow)
         roundedbutton.config(bg=config.yellow)
-        miniconfirm.config(bg=config.yellow)
     if bgcolor == 3:#blue
         inpclose.config(bg=config.blue)
         inpopen.config(bg=config.blue)
@@ -795,7 +782,6 @@ def backcolor():
         inphight.config(bg=config.blue)
         sizeconfirm.config(bg=config.blue)
         roundedbutton.config(bg=config.blue)
-        miniconfirm.config(bg=config.blue)
     if bgcolor == 4:
         inpclose.config(bg=config.red)
         inpopen.config(bg=config.red)
@@ -817,7 +803,6 @@ def backcolor():
         inphight.config(bg=config.red)
         sizeconfirm.config(bg=config.red)
         roundedbutton.config(bg=config.red)
-        miniconfirm.config(bg=config.red)
     if bgcolor == 5:
         inpclose.config(bg=config.default)
         inpopen.config(bg=config.default)
@@ -839,7 +824,6 @@ def backcolor():
         inphight.config(bg=config.default)
         sizeconfirm.config(bg=config.default)
         roundedbutton.config(bg=config.default)
-        miniconfirm.config(bg=config.default)
     if bgcolor == 6:
         inpclose.config(bg=config.white)
         inpopen.config(bg=config.white)
@@ -861,7 +845,6 @@ def backcolor():
         inphight.config(bg=config.white)
         sizeconfirm.config(bg=config.white)
         roundedbutton.config(bg=config.white)
-        miniconfirm.config(bg=config.white)
     if bgcolor == 7:
         inpclose.config(bg=config.black)
         inpopen.config(bg=config.black)
@@ -883,7 +866,6 @@ def backcolor():
         inphight.config(bg=config.black)
         sizeconfirm.config(bg=config.black)
         roundedbutton.config(bg=config.black)
-        miniconfirm.config(bg=config.black)
 def rootcolors():
     global rootcolor
     if rootcolor == 1:
@@ -1050,14 +1032,12 @@ def language():
         crtconfirm.config(text="Установить")
         sizeconfirm.config(text="Установить")
         getbutton.config(text="Установить")
-        miniconfirm.config(text="Установить")
         minitext.config(text="Мини окно")
         miniopen.config(text="Кнопка открытия")
         miniclose.config(text="Кнопка закрытия")
     if lang == 1:
         bgtext.place(x=config.width/100*23.3157894737,y=config.height/100*33.3333333333)
         rttext.place(x=config.width/100*49.4210526316, y=config.height/100*33.3333333333)
-        miniconfirm.config(text="Set")
         sname.config(text="Settings")
         sizetext.config(text="Window size")
         text.config(text="Set path to dictionary")
@@ -1076,15 +1056,11 @@ def language():
         miniclose.config(text="Close Button")
         miniopen.config(text="Open Button")
 def new():
-    global activ_var
-    global key
-    global bindclose
-    global bindopen
-    var=activ_var.get()
-    if var == 0:
-        pass
-    if var == 1:
-        window = tk.Toplevel(root)
+    global wind
+    miniwindow = tk.Toplevel()
+    if wind == 1:
+        miniwindow.destroy()
+        miniwindow.update()
 def openbind(event):
     global bopen
     key2 = keyboard.read_key()
@@ -1094,6 +1070,7 @@ def openbind(event):
                "enter","backspace","space"]
     if key2:
         if key2 not in badkeys:
+            time.sleep(0.1)
             bopen = key2
             inpopen.delete(0,END)
             inpopen.insert(END,bopen)
@@ -1106,6 +1083,7 @@ def closebind(event):
                "enter","backspace","space"]
     if key2:
         if key2 not in badkeys:
+            time.sleep(0.1)
             bclose = key2
             inpclose.delete(0,END)
             inpclose.insert(END,bclose)
@@ -1243,8 +1221,6 @@ dactiv = tk.Radiobutton(bg=config.white,text="Off",variable=activ_var, value=0,f
 dactiv.pack_forget()
 minitext = tk.Label(root, height=1, font=config.text, fg=config.butbg, bg=config.white, text="Мини окно")
 minitext.pack_forget()
-miniconfirm = tk.Button(root,font=config.text,fg=config.bg,bg=config.butbg,command=new,text="Установить")
-miniconfirm.pack_forget()
 bindclose = StringVar()
 inpclose = Entry(width=14,font=config.font,textvariable=bindclose,highlightbackground=config.butbg,highlightthickness=4)
 inpclose.pack_forget()
@@ -1270,8 +1246,6 @@ def my_mainloop():
     global btn_text3
     global btn_text4
     global btn_text5
-    global bindclose
-    global bindopen
     if 1==100:
         print(2)
     elif len(alist)==4:
@@ -1373,6 +1347,9 @@ tlist = []
 alist = []
 check = len(alist)
 def t9():
+    global wind
+    global bclose
+    global bopen
     global word
     class Trie(object):
         def __init__(self):
@@ -1418,13 +1395,12 @@ def t9():
                 alist.append(word_keys)
             for key in self.childNode.keys():
                 self.childNode[key].DFS(word_keys + key)
-
     hendler = ""
     bad = ["down", "alt", "shift", "ctrl", "up", "esc", "backspace", "locknum", "insert", "delete", "space", "enter",
            "left", "right", "tab", "caps lock", "home", "print screen", "page up", "page down", "left windows",
            "right alt", "right ctrl", "end", "f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8", "f9", "f10", "f11", "f12",
            "\\", "/", "|", ".", ",", "?", "!", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "`", ";", ":", "~",
-           ">", "<", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "="]
+           ">", "<", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=","№","fn"]
     trie = Trie()
     with open(config.dictionarypath, 'r') as f:
         words = f.readline().strip('\r\n')
@@ -1436,22 +1412,31 @@ def t9():
         if word == 'exitq':
             exit()
             break
-        if key:
+        elif key:
             if key not in bad:
                 alist.clear()
                 word += key
                 trie.search_word(word)
                 tlist.clear()
                 time.sleep(0.1)
-        if key == "space":
-            word = ""
-            tlist.clear()
-        if key == "backspace":
-            srez = len(word)
-            srez = srez-1
-            word = word[:srez]
-            tlist.clear()
-            time.sleep(0.1)
+            elif key == "space":
+                word = ""
+                tlist.clear()
+            elif key == "backspace":
+                srez = len(word)
+                srez = srez-1
+                word = word[:srez]
+                tlist.clear()
+                time.sleep(0.1)
+            elif key == bopen:
+                wind = 0
+                print(wind)
+                new()
+            elif key == bclose:
+                print(wind)
+                wind = 0
+                wind +=1
+                new()
 
 #start process
 t1 = threading.Thread(target=t9, args=())
