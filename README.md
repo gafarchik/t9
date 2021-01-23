@@ -5,6 +5,8 @@ To install, open the install.py file or write commands to the console
 ____
 ```
 pip3 install keyboard
+pip3 install pynput
+pip3 install pywin32
 pip3 install tkinter
 ```
 ## Using
