@@ -10,7 +10,8 @@ print("███ █  █ ███  █  █  █ ███ ███ █  █ 
 print("\n\n\nDo you want start program after installation?(y/n)")
 startprogram = str(input("-->"))
 os.system("pip3 install keyboard")
-os.system("pip3 install PILLOW")
+os.system("pip3 install pynput")
+os.system("pip3 install pywin32")
 os.system("pip3 install tkinter")
 if startprogram == "y":
     import start
