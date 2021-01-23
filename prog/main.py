@@ -1,5 +1,6 @@
 #imports
 import keyboard
+from pynput.keyboard import Key,Controller
 import sys
 import time
 sys.path.insert(0,"proj/prog/tscript/")
@@ -7,7 +8,9 @@ import tkinter as tk
 from tkinter import *
 import threading
 import config
+import win32gui
 
+pressedkey = Controller()
 #config
 config.font = "Arial 24 bold"
 color = 0
@@ -17,15 +20,21 @@ bgcolor = 6
 rootcolor=6
 bclose = ""
 bopen = ""
+minix = 50
+miniy = 750
 w1 = ""
 w2 = ""
 w3 = ""
 w4 = ""
 w5 = ""
 word = ""
+minix = 50
+miniy = 750
 #window settings
 root = tk.Tk()
-root.geometry("%dx%d" % (config.width, config.height))
+maxwidth = root.winfo_screenwidth()
+maxheight = root.winfo_screenheight()
+root.geometry("%dx%d" % (maxwidth/100*49.4791666667, maxheight/100*55.5555555556))
 root.overrideredirect(0)
 root.config(bg=config.bg)
 root.title(config.title)
@@ -36,8 +45,7 @@ btn_text2 = tk.StringVar()
 btn_text3 = tk.StringVar()
 btn_text4 = tk.StringVar()
 btn_text5 = tk.StringVar()
-maxwidth = root.winfo_screenwidth()
-maxheight = root.winfo_screenheight()
+
 #commands
 def play():
     startbutton.place(x=config.width/100*13.6842105263, y=config.height/100*1.66666666667,height = config.height/100*6.5,width=config.width/100*4.10526315789)
@@ -331,7 +339,6 @@ def start():
     getbutton.pack(pady=1, padx=1)
     getbutton.pack_forget()
     name.place(x=config.width/100*44.2105263158, y=config.height/100*0.83333333333)
-    #root.wm_attributes('-topmost', 1)
 def tw1():
     global word
     global w1
@@ -997,16 +1004,20 @@ def rootcolors():
 def sizeconfirm():
     global maxwidth
     global maxheight
+    global minix
+    global miniy
     global ihight
     global iwidth
     newwidth = int(iwidth.get())
     newheight = int(ihight.get())
     if newheight <= maxheight:
         if newwidth <= maxwidth:
-            root.geometry("{}x{}".format(newwidth,newheight))
+            minix = newwidth
+            miniy = newheight
     if newwidth <= maxwidth:
         if newheight <= maxheight:
-            root.geometry("{}x{}".format(newwidth,newheight))
+            minix = newwidth
+            miniy = newheight
 def ru():
     global lang
     lang = 0
@@ -1019,7 +1030,7 @@ def language():
     global lang
     if lang == 0:
         sname.config(text="Настройки")
-        sizetext.config(text="Размер окна")
+        sizetext.config(text="Размер мини окна")
         text.config(text="Задать путь к словарю")
         tyour.config(text="Ваше слово")
         tpod.config(text="Подсказки")
@@ -1039,7 +1050,7 @@ def language():
         bgtext.place(x=config.width/100*23.3157894737,y=config.height/100*33.3333333333)
         rttext.place(x=config.width/100*49.4210526316, y=config.height/100*33.3333333333)
         sname.config(text="Settings")
-        sizetext.config(text="Window size")
+        sizetext.config(text="Mini window size")
         text.config(text="Set path to dictionary")
         tyour.config(text="Your word")
         tpod.config(text="Hints")
@@ -1055,12 +1066,87 @@ def language():
         minitext.config(text="Mini Window")
         miniclose.config(text="Close Button")
         miniopen.config(text="Open Button")
+def miniw1():
+    global word
+    global w1
+    l = len(word)
+    btn = w1[l:]
+    time.sleep(1)
+    for x in range (0,len(btn)):
+        pressedkey.press(btn[x])
+        pressedkey.release(btn[x])
+def miniw2():
+    global word
+    global w2
+    l = len(word)
+    btn = w2[l:]
+    time.sleep(1)
+    for x in range (0,len(btn)):
+        pressedkey.press(btn[x])
+        pressedkey.release(btn[x])
+def miniw3():
+    global word
+    global w3
+    l = len(word)
+    btn = w3[l:]
+    time.sleep(1)
+    for x in range(0, len(btn)):
+        pressedkey.press(btn[x])
+        pressedkey.release(btn[x])
+def miniw4():
+    global word
+    global w4
+    l = len(word)
+    btn = w4[l:]
+    time.sleep(1)
+    for x in range(0, len(btn)):
+        pressedkey.press(btn[x])
+        pressedkey.release(btn[x])
+def miniw5():
+    global word
+    global w5
+    l = len(word)
+    btn = w5[l:]
+    time.sleep(1)
+    for x in range(0, len(btn)):
+        pressedkey.press(btn[x])
+        pressedkey.release(btn[x])
+n = 0
 def new():
+    global n
     global wind
+    global minix
+    global miniy
     miniwindow = tk.Toplevel()
     if wind == 1:
-        miniwindow.destroy()
-        miniwindow.update()
+        n=0
+        for miniwindow in root.winfo_children():
+            if isinstance(miniwindow, tk.Toplevel):
+                miniwindow.destroy()
+                miniwindow.update()
+    elif n == 0:
+        miniwindow.wm_attributes('-topmost', 1)
+        miniwindow.resizable(False, False)
+        miniwindow.overrideredirect(True)
+        minislovo1 = tk.Button(miniwindow, textvariable=btn_text1, command=miniw1, font=config.text, fg=config.butbg,
+                               bg=config.bg, highlightbackground=config.butbg, highlightthickness=4)
+        minislovo1.place(x=miniy / 100 * 0.13333333333, y=minix / 100 * 2, height=minix / 100 * 98,
+                         width=miniy / 100 * 20)
+        minislovo2 = tk.Button(miniwindow, font=config.text, textvariable=btn_text2, command=miniw2, fg=config.butbg,
+                               bg=config.bg, highlightbackground=config.butbg, highlightthickness=4)
+        minislovo2.place(x=miniy / 100 * 20, y=minix / 100 * 2, height=minix / 100 * 98, width=miniy / 100 * 20)
+        minislovo3 = tk.Button(miniwindow, font=config.text, textvariable=btn_text3, command=miniw3, fg=config.butbg,
+                               bg=config.bg, highlightbackground=config.butbg, highlightthickness=4)
+        minislovo3.place(x=miniy / 100 * 40, y=minix / 100 * 2, height=minix / 100 * 98, width=miniy / 100 * 20)
+        minislovo4 = tk.Button(miniwindow, font=config.text, fg=config.butbg, textvariable=btn_text4, command=miniw4,
+                               bg=config.bg, highlightbackground=config.butbg, highlightthickness=4)
+        minislovo4.place(x=miniy / 100 * 60, y=minix / 100 * 2, height=minix / 100 * 98, width=miniy / 100 * 20)
+        minislovo5 = tk.Button(miniwindow, font=config.text, fg=config.butbg, textvariable=btn_text5, command=miniw5,
+                               bg=config.bg, highlightbackground=config.butbg, highlightthickness=4)
+        minislovo5.place(x=miniy / 100 * 80, y=minix / 100 * 2, height=minix / 100 * 98, width=miniy / 100 * 20)
+        flags, hcursor, (x, y) = win32gui.GetCursorInfo()
+        miniwindow.geometry("{}x{}+{}+{}".format(miniy, minix, x, y))
+        n+=1
 def openbind(event):
     global bopen
     key2 = keyboard.read_key()
@@ -1128,7 +1214,7 @@ yourslovo.insert(END,"")
 yourslovo["border"] = "0"
 yourslovo.pack_forget()
 name = tk.Label(root,height=1,font=config.name,fg=config.butbg,bg=config.bg,text="T9 ")
-name.place(x=config.width/100*44.2105263158,y=config.height/100*8.33333333333)
+name.place(x=config.width/100*44.2105263158,y=230)
 sname = tk.Label(root, height=1, font=config.name, fg=config.butbg, bg=config.bg, text="настройки")
 sname.pack_forget()
 tyour = tk.Label(root, height=1, font=config.text, fg=config.butbg, bg=config.white, text="Ваше слово")
@@ -1197,7 +1283,7 @@ inpwidth.pack_forget()
 ihight = StringVar()
 inphight = Entry(width=5,font=config.font,textvariable=ihight,highlightbackground=config.butbg,highlightthickness=4)
 inphight.pack_forget()
-sizetext = tk.Label(root, height=1, font=config.text, fg=config.butbg, bg=config.white, text="Размеры окна")
+sizetext = tk.Label(root, height=1, font=config.text, fg=config.butbg, bg=config.white, text="Размер мини окна")
 sizetext.pack_forget()
 xtext = tk.Label(root, height=1, font=config.text, fg=config.butbg, bg=config.bg, text="x")
 xtext.pack_forget()
@@ -1351,6 +1437,7 @@ def t9():
     global bclose
     global bopen
     global word
+    global activ_var
     class Trie(object):
         def __init__(self):
             self.childNode = {}
@@ -1429,14 +1516,21 @@ def t9():
                 tlist.clear()
                 time.sleep(0.1)
             elif key == bopen:
-                wind = 0
-                print(wind)
-                new()
+                active = activ_var.get()
+                if active == 1:
+                    wind = 0
+                    new()
+                    time.sleep(0.5)
+                else:
+                    pass
             elif key == bclose:
-                print(wind)
-                wind = 0
-                wind +=1
-                new()
+                active = activ_var.get()
+                if active == 1:
+                    wind = 0
+                    wind +=1
+                    new()
+                else:
+                    pass
 
 #start process
 t1 = threading.Thread(target=t9, args=())
